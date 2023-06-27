@@ -14,8 +14,18 @@ class _StartScreenState extends State<StartScreen> {
   Widget build(context) {
     return Scaffold(
       body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              Color.fromARGB(223, 255, 181, 181),
+              Color.fromARGB(222, 255, 200, 200),
+            ],
+          ),
+        ),
         padding: const EdgeInsetsDirectional.symmetric(
-          horizontal: 40,
+          horizontal: 50,
           vertical: 4,
         ),
         // margin: const EdgeInsets.symmetric(
@@ -27,25 +37,41 @@ class _StartScreenState extends State<StartScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              'assets/images/heart.png',
-              width: 100,
-              height: 100,
-              color: const Color.fromARGB(255, 237, 84, 84),
+              'assets/images/blood.png',
+              width: 240,
+              height: 200,
+              // color: const Color.fromARGB(192, 237, 84, 84),
             ),
-            const TextField(
-              maxLength: 20,
+            const SizedBox(
+              height: 40,
+            ),
+            TextField(
               decoration: InputDecoration(
                 hintText: 'someone@email.com',
-                label: Text('Email/Phone'),
+                label: const Text('Email/Phone'),
+                border: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Theme.of(context).colorScheme.secondary,
+                    style: BorderStyle.solid,
+                    strokeAlign: BorderSide.strokeAlignCenter,
+                  ),
+                ),
               ),
             ),
-            // const SizedBox(
-            //   height: 4,
-            // ),
-            const TextField(
+            const SizedBox(
+              height: 10,
+            ),
+            TextField(
               obscureText: true,
               decoration: InputDecoration(
-                label: Text('Password'),
+                label: const Text('Password'),
+                border: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    style: BorderStyle.solid,
+                    strokeAlign: BorderSide.strokeAlignCenter,
+                    color: Theme.of(context).colorScheme.secondary,
+                  ),
+                ),
               ),
             ),
             const SizedBox(

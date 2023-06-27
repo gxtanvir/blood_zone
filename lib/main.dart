@@ -17,13 +17,18 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Blood Zone',
       theme: ThemeData().copyWith(
-          useMaterial3: true,
-          colorScheme: kColorScheme,
-          elevatedButtonTheme: ElevatedButtonThemeData(
-              style: ElevatedButton.styleFrom(
+        useMaterial3: true,
+        colorScheme: kColorScheme,
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
             backgroundColor: kColorScheme.primary,
             foregroundColor: kColorScheme.onPrimary,
-          ),),),
+            shape: BeveledRectangleBorder(
+              borderRadius: BorderRadius.circular(2),
+            ),
+          ),
+        ),
+      ),
       home: const StartScreen(),
     );
   }
